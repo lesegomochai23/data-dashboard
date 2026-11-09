@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SA Analytics Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Decorative background blobs for the glass effect -->
+    <div class="bg-shape shape1"></div>
+    <div class="bg-shape shape2"></div>
+    <div class="bg-shape shape3"></div>
+
+    <div class="dashboard-container">
+        <header>
+            <h1>Analytics Dashboard</h1>
+            <p>Overview of your business metrics (ZAR)</p>
+        </header>
+
+        <div class="summary-cards">
+            <div class="glass-card">
+                <h3>Total Revenue</h3>
+                <p class="value" id="totalRevenue">R0</p>
+            </div>
+            <div class="glass-card">
+                <h3>Total Users</h3>
+                <p class="value" id="totalUsers">0</p>
+            </div>
+            <div class="glass-card">
+                <h3>Total Orders</h3>
+                <p class="value" id="totalOrders">0</p>
+            </div>
+            <div class="glass-card">
+                <h3>Conversion Rate</h3>
+                <p class="value" id="conversionRate">0%</p>
+            </div>
+        </div>
+
+        <div class="charts-grid">
+            <div class="glass-card chart-box">
+                <h3>Monthly Revenue</h3>
+                <canvas id="lineChart"></canvas>
+            </div>
+            <div class="glass-card chart-box">
+                <h3>Traffic Sources</h3>
+                <canvas id="doughnutChart"></canvas>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

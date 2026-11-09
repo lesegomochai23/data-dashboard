@@ -1,0 +1,138 @@
+:root {
+    --bg-color: #f0f2f5; /* Soft greyish-white background */
+    --text-dark: #1e1e24;
+    --text-muted: #5a5a66;
+    --glass-bg: rgba(255, 255, 255, 0.45); /* Frosted glass */
+    --glass-border: rgba(255, 255, 255, 0.7);
+    --orange: #ff6b00;
+    --red: #e63946;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-dark);
+    padding: 40px;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Background blobs to make the glass pop */
+.bg-shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    z-index: -1;
+    opacity: 0.7;
+}
+
+.shape1 {
+    width: 450px;
+    height: 450px;
+    background: var(--orange);
+    top: -100px;
+    left: -100px;
+}
+
+.shape2 {
+    width: 350px;
+    height: 350px;
+    background: var(--red);
+    bottom: 5%;
+    right: -50px;
+}
+
+.shape3 {
+    width: 300px;
+    height: 300px;
+    background: #ffffff;
+    top: 40%;
+    left: 35%;
+}
+
+/* Glassmorphism Classes */
+.dashboard-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+header {
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 2.8rem;
+    color: var(--text-dark);
+    letter-spacing: -1px;
+}
+
+header p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-top: 5px;
+}
+
+/* Grid Layouts */
+.summary-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.charts-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 25px;
+}
+
+@media (max-width: 850px) {
+    .charts-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* The Glass Cards */
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+    transition: transform 0.3s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+}
+
+.glass-card h3 {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    margin-bottom: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.glass-card .value {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--orange);
+}
+
+.chart-box {
+    height: 380px;
+    position: relative;
+}
